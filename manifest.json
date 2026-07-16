@@ -1,0 +1,241 @@
+{
+  "id": "http_generic",
+  "name": "HTTP Genérico",
+  "version": "1.0.0",
+  "description": "Peticiones a cualquier API REST configurada (GET/POST/PUT/DELETE), con autenticación configurable (none, basic, bearer, api_key) y protección SSRF incorporada",
+  "name_en": "Generic HTTP",
+  "description_en": "Requests to any configured REST API (GET/POST/PUT/DELETE), with configurable authentication (none, basic, bearer, api_key) and built-in SSRF protection",
+  "icon": "icon.svg",
+  "category": "utilities",
+  "category_en": "utilities",
+  "keywords": ["http", "rest", "api", "generico", "generic", "webhook", "autenticacion", "authentication", "ssrf", "oauth2", "bearer token", "api key", "basic auth"],
+  "library": {
+    "package": "ruvic-http-generic-connector",
+    "install": "pip install git+https://github.com/tu-org/conector-http-generico.git#subdirectory=lib",
+    "import_name": "ruvic_http_generic_connector"
+  },
+  "auth_modes": [
+    {
+      "id": "none",
+      "label": "Sin autenticación",
+      "fields": [
+        {
+          "key": "base_url",
+          "label": "URL base de la API",
+          "type": "text",
+          "required": true,
+          "placeholder": "https://api.ejemplo.com"
+        },
+        {
+          "key": "default_headers",
+          "label": "Headers por defecto (JSON, opcional)",
+          "type": "text",
+          "required": false,
+          "placeholder": "{\"X-Custom-Header\": \"valor\"}"
+        },
+        {
+          "key": "allowed_domains",
+          "label": "Dominios adicionales permitidos (opcional, separados por coma)",
+          "type": "text",
+          "required": false
+        },
+        {
+          "key": "allow_private_networks",
+          "label": "Permitir redes privadas/internas",
+          "type": "boolean",
+          "required": false,
+          "default": "false",
+          "help_text": "Actívalo SOLO si necesitas llamar a un sistema interno legítimo. Riesgo de seguridad si se activa sin necesidad real."
+        },
+        {
+          "key": "request_timeout",
+          "label": "Timeout de peticiones (segundos)",
+          "type": "number",
+          "required": false,
+          "default": "20"
+        }
+      ]
+    },
+    {
+      "id": "basic",
+      "label": "Basic Auth (usuario y contraseña)",
+      "fields": [
+        {
+          "key": "base_url",
+          "label": "URL base de la API",
+          "type": "text",
+          "required": true,
+          "placeholder": "https://api.ejemplo.com"
+        },
+        {
+          "key": "username",
+          "label": "Usuario",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "password",
+          "label": "Contraseña",
+          "type": "password",
+          "secret": true,
+          "required": true
+        },
+        {
+          "key": "default_headers",
+          "label": "Headers por defecto (JSON, opcional)",
+          "type": "text",
+          "required": false
+        },
+        {
+          "key": "allowed_domains",
+          "label": "Dominios adicionales permitidos (opcional, separados por coma)",
+          "type": "text",
+          "required": false
+        },
+        {
+          "key": "allow_private_networks",
+          "label": "Permitir redes privadas/internas",
+          "type": "boolean",
+          "required": false,
+          "default": "false"
+        },
+        {
+          "key": "request_timeout",
+          "label": "Timeout de peticiones (segundos)",
+          "type": "number",
+          "required": false,
+          "default": "20"
+        }
+      ]
+    },
+    {
+      "id": "bearer",
+      "label": "Bearer Token",
+      "fields": [
+        {
+          "key": "base_url",
+          "label": "URL base de la API",
+          "type": "text",
+          "required": true,
+          "placeholder": "https://api.ejemplo.com"
+        },
+        {
+          "key": "bearer_token",
+          "label": "Token",
+          "type": "password",
+          "secret": true,
+          "required": true
+        },
+        {
+          "key": "default_headers",
+          "label": "Headers por defecto (JSON, opcional)",
+          "type": "text",
+          "required": false
+        },
+        {
+          "key": "allowed_domains",
+          "label": "Dominios adicionales permitidos (opcional, separados por coma)",
+          "type": "text",
+          "required": false
+        },
+        {
+          "key": "allow_private_networks",
+          "label": "Permitir redes privadas/internas",
+          "type": "boolean",
+          "required": false,
+          "default": "false"
+        },
+        {
+          "key": "request_timeout",
+          "label": "Timeout de peticiones (segundos)",
+          "type": "number",
+          "required": false,
+          "default": "20"
+        }
+      ]
+    },
+    {
+      "id": "api_key",
+      "label": "API Key (header o query param)",
+      "fields": [
+        {
+          "key": "base_url",
+          "label": "URL base de la API",
+          "type": "text",
+          "required": true,
+          "placeholder": "https://api.ejemplo.com"
+        },
+        {
+          "key": "api_key_name",
+          "label": "Nombre de la llave",
+          "type": "text",
+          "required": true,
+          "placeholder": "X-API-Key"
+        },
+        {
+          "key": "api_key_value",
+          "label": "Valor de la llave",
+          "type": "password",
+          "secret": true,
+          "required": true
+        },
+        {
+          "key": "api_key_location",
+          "label": "Dónde va la llave",
+          "type": "select",
+          "required": true,
+          "default": "header",
+          "options": [
+            {
+              "value": "header",
+              "label": "Header"
+            },
+            {
+              "value": "query",
+              "label": "Query param"
+            }
+          ]
+        },
+        {
+          "key": "default_headers",
+          "label": "Headers por defecto (JSON, opcional)",
+          "type": "text",
+          "required": false
+        },
+        {
+          "key": "allowed_domains",
+          "label": "Dominios adicionales permitidos (opcional, separados por coma)",
+          "type": "text",
+          "required": false
+        },
+        {
+          "key": "allow_private_networks",
+          "label": "Permitir redes privadas/internas",
+          "type": "boolean",
+          "required": false,
+          "default": "false"
+        },
+        {
+          "key": "request_timeout",
+          "label": "Timeout de peticiones (segundos)",
+          "type": "number",
+          "required": false,
+          "default": "20"
+        }
+      ]
+    }
+  ],
+  "env_prefix": "RUVIC_HTTP_GENERIC_",
+  "operations": [
+    "http.get",
+    "http.post",
+    "http.put",
+    "http.delete",
+    "http.request"
+  ],
+  "test_connection": true,
+  "docs": {
+    "skill": "SKILL.md",
+    "permissions_note": "Este conector golpea directamente la API destino configurada en base_url, sin capa de permisos propia — los permisos reales son los que la API destino le otorgue a las credenciales configuradas. El admin debe usar credenciales con el mínimo privilegio posible en el sistema destino. Por seguridad, este conector solo permite llamadas al dominio configurado en base_url (más los que se agreguen explícitamente en allowed_domains), y bloquea por defecto direcciones IP privadas/internas y el endpoint de metadata de la nube, salvo que se active allow_private_networks explícitamente. A diferencia de otros conectores de Ruvic, SÍ permite eliminar datos (DELETE) si la API destino lo soporta — usar con cuidado."
+  }
+}
