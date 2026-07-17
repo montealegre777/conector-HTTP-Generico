@@ -28,6 +28,8 @@ El código generado **NUNCA hardcodea credenciales**. Siempre se leen de variabl
 | `RUVIC_HTTP_GENERIC_ALLOWED_DOMAINS` | (opcional) dominios extra permitidos, aparte de base_url |
 | `RUVIC_HTTP_GENERIC_ALLOW_PRIVATE_NETWORKS` | (opcional) `true`/`false`, default `false` |
 
+El código generado **NUNCA** usa nombres de variable con segmento de alias (`_DEFAULT_`, `_TEST_`, `_PRODUCCION_`, etc.) — siempre `RUVIC_HTTP_GENERIC_{CAMPO}` tal cual, sin importar cuántas instancias de este conector haya configuradas. Esto aplica salvo que dichos nombres aparezcan explícitamente en una sección autogenerada al final de este skill.
+
 Si estas variables NO existen, el conector no está configurado: no generes código que lo use; indica al usuario que lo configure en **Settings → Conectores**.
 
 ## ⚠️ Este conector está atado a UN dominio — no intentes llamar a otras URLs

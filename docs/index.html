@@ -12,15 +12,15 @@
   <div class="ruvic-header-inner">
     <p class="ruvic-wordmark">Ruvic</p>
 
-    <h1>Conector HTTP Genérico — Guía de configuración</h1>
-    <p class="subtitle">
+    <h1 data-i18n="header_h1">Conector HTTP Genérico — Guía de configuración</h1>
+    <p class="subtitle" data-i18n="header_subtitulo">
       Conecta cualquier API REST que no tenga un conector dedicado en Ruvic — con autenticación configurable y protección contra uso indebido hacia redes internas.
     </p>
 
     <div class="meta">
-      <span class="ruvic-badge">HTTP Genérico</span>
-      <span class="ruvic-badge">Utilitarios</span>
-      <span class="ruvic-badge">v1.0.0</span>
+      <span class="ruvic-badge" data-i18n="header_badge_nombre">HTTP Genérico</span>
+      <span class="ruvic-badge" data-i18n="header_badge_categoria">Utilitarios</span>
+      <span class="ruvic-badge" data-i18n="header_badge_version">v1.0.0</span>
     </div>
   </div>
 </header>
@@ -30,175 +30,175 @@
 
   <!-- ============ ÍNDICE ============ -->
   <nav class="ruvic-toc" aria-label="Índice">
-    <h2>Contenido</h2>
+    <h2 data-i18n="toc_titulo">Contenido</h2>
     <ol>
-      <li><a href="#que-es">¿Qué es y para qué sirve?</a></li>
-      <li><a href="#seguridad">Cómo funciona la seguridad (léelo primero)</a></li>
-      <li><a href="#prerrequisitos">Prerrequisitos</a></li>
-      <li><a href="#configuracion-fabricante">Cómo obtener las credenciales del sistema destino</a></li>
-      <li><a href="#permisos">Permisos requeridos</a></li>
-      <li><a href="#configuracion-ruvic">Configuración en Ruvic</a></li>
-      <li><a href="#verificacion">Verificación</a></li>
-      <li><a href="#solucion-problemas">Solución de problemas</a></li>
-      <li><a href="#faq-seguridad">Preguntas frecuentes</a></li>
+      <li><a href="#que-es" data-i18n="toc_item_que_es">¿Qué es y para qué sirve?</a></li>
+      <li><a href="#seguridad" data-i18n="toc_item_seguridad">Cómo funciona la seguridad (léelo primero)</a></li>
+      <li><a href="#prerrequisitos" data-i18n="toc_item_prerrequisitos">Prerrequisitos</a></li>
+      <li><a href="#configuracion-fabricante" data-i18n="toc_item_configuracion_fabricante">Cómo obtener las credenciales del sistema destino</a></li>
+      <li><a href="#permisos" data-i18n="toc_item_permisos">Permisos requeridos</a></li>
+      <li><a href="#configuracion-ruvic" data-i18n="toc_item_configuracion_ruvic">Configuración en Ruvic</a></li>
+      <li><a href="#verificacion" data-i18n="toc_item_verificacion">Verificación</a></li>
+      <li><a href="#solucion-problemas" data-i18n="toc_item_solucion_problemas">Solución de problemas</a></li>
+      <li><a href="#faq-seguridad" data-i18n="toc_item_faq_seguridad">Preguntas frecuentes</a></li>
     </ol>
   </nav>
 
   <!-- ============ 1. QUÉ ES ============ -->
   <section>
-    <h2 id="que-es">1. ¿Qué es y para qué sirve?</h2>
+    <h2 id="que-es" data-i18n="que_es_h2">1. ¿Qué es y para qué sirve?</h2>
 
-    <p>Los demás conectores de Ruvic (Salesforce, HubSpot, GitHub...) están hechos a la medida de un proveedor específico. Este conector es distinto: es una herramienta <strong>genérica</strong> para conectarse a <strong>cualquier API REST</strong> que el cliente use y que todavía no tenga un conector dedicado.</p>
-    <p>Cada vez que se configura, queda atado a <strong>una sola API destino</strong> (definida por su URL base) — no es un conector que pueda llamar a cualquier URL que se le ocurra al agente en el momento.</p>
-    <p>Operaciones soportadas:</p>
+    <p data-i18n="que_es_p1">Los demás conectores de Ruvic (Salesforce, HubSpot, GitHub...) están hechos a la medida de un proveedor específico. Este conector es distinto: es una herramienta <strong>genérica</strong> para conectarse a <strong>cualquier API REST</strong> que el cliente use y que todavía no tenga un conector dedicado.</p>
+    <p data-i18n="que_es_p2">Cada vez que se configura, queda atado a <strong>una sola API destino</strong> (definida por su URL base) — no es un conector que pueda llamar a cualquier URL que se le ocurra al agente en el momento.</p>
+    <p data-i18n="que_es_p3">Operaciones soportadas:</p>
 
     <table>
       <thead>
         <tr>
-          <th>Operación</th>
-          <th>Qué hace</th>
+          <th data-i18n="que_es_tabla_th1">Operación</th>
+          <th data-i18n="que_es_tabla_th2">Qué hace</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td><code>http.get</code></td><td>Consultar datos</td></tr>
-        <tr><td><code>http.post</code></td><td>Crear datos</td></tr>
-        <tr><td><code>http.put</code></td><td>Actualizar/reemplazar datos</td></tr>
-        <tr><td><code>http.delete</code></td><td>Eliminar datos ⚠️</td></tr>
-        <tr><td><code>http.request</code></td><td>Verbo arbitrario (ej. PATCH)</td></tr>
+        <tr><td><code>http.get</code></td><td data-i18n="que_es_tabla_fila1_col2">Consultar datos</td></tr>
+        <tr><td><code>http.post</code></td><td data-i18n="que_es_tabla_fila2_col2">Crear datos</td></tr>
+        <tr><td><code>http.put</code></td><td data-i18n="que_es_tabla_fila3_col2">Actualizar/reemplazar datos</td></tr>
+        <tr><td><code>http.delete</code></td><td data-i18n="que_es_tabla_fila4_col2">Eliminar datos ⚠️</td></tr>
+        <tr><td><code>http.request</code></td><td data-i18n="que_es_tabla_fila5_col2">Verbo arbitrario (ej. PATCH)</td></tr>
       </tbody>
     </table>
 
     <div class="callout callout-warning">
-      <span class="callout-title">Este conector SÍ elimina datos</span>
-      A diferencia de los demás conectores de Ruvic, este <strong>sí ejecuta operaciones DELETE reales</strong> si la API destino lo soporta. No hay una capa de bloqueo — la responsabilidad de usarlo con cuidado recae en quien lo configure y en cómo se instruya al agente.
+      <span class="callout-title" data-i18n="que_es_callout_titulo">Este conector SÍ elimina datos</span>
+      <span data-i18n="que_es_callout_texto">A diferencia de los demás conectores de Ruvic, este <strong>sí ejecuta operaciones DELETE reales</strong> si la API destino lo soporta. No hay una capa de bloqueo — la responsabilidad de usarlo con cuidado recae en quien lo configure y en cómo se instruya al agente.</span>
     </div>
   </section>
 
   <!-- ============ 2. SEGURIDAD ============ -->
   <section>
-    <h2 id="seguridad">2. Cómo funciona la seguridad (léelo primero)</h2>
+    <h2 id="seguridad" data-i18n="seguridad_h2">2. Cómo funciona la seguridad (léelo primero)</h2>
 
-    <p>Porque este conector puede apuntar a cualquier API que un admin configure, trae protecciones activas contra un riesgo específico llamado <strong>SSRF</strong> (Server-Side Request Forgery): que, por error de configuración o por manipulación del agente, el conector termine llamando a direcciones internas de la infraestructura de Ruvic en vez de a la API externa que se pretendía.</p>
+    <p data-i18n="seguridad_p1">Porque este conector puede apuntar a cualquier API que un admin configure, trae protecciones activas contra un riesgo específico llamado <strong>SSRF</strong> (Server-Side Request Forgery): que, por error de configuración o por manipulación del agente, el conector termine llamando a direcciones internas de la infraestructura de Ruvic en vez de a la API externa que se pretendía.</p>
 
-    <h3>Protección 1 — Atado a un solo dominio</h3>
-    <p>El conector solo puede llamar al dominio configurado en <em>URL base</em>, más los que se agreguen explícitamente en <em>Dominios adicionales permitidos</em>. Si el agente intenta construir una URL hacia otro dominio, la petición se rechaza automáticamente.</p>
+    <h3 data-i18n="seguridad_h3_proteccion1">Protección 1 — Atado a un solo dominio</h3>
+    <p data-i18n="seguridad_p_proteccion1">El conector solo puede llamar al dominio configurado en <em>URL base</em>, más los que se agreguen explícitamente en <em>Dominios adicionales permitidos</em>. Si el agente intenta construir una URL hacia otro dominio, la petición se rechaza automáticamente.</p>
 
-    <h3>Protección 2 — Bloqueo de redes privadas</h3>
-    <p>Por defecto, si el dominio configurado resuelve a una dirección IP privada, interna, o al endpoint de metadata de la nube (<code>169.254.169.254</code>, usado por AWS/GCP/Azure para exponer credenciales de la máquina), la petición se bloquea. Esto se puede desactivar con <em>Permitir redes privadas/internas</em> — <strong>solo hazlo si hay una necesidad de negocio real</strong> (ej. integración con un sistema interno del cliente vía VPN).</p>
+    <h3 data-i18n="seguridad_h3_proteccion2">Protección 2 — Bloqueo de redes privadas</h3>
+    <p data-i18n="seguridad_p_proteccion2">Por defecto, si el dominio configurado resuelve a una dirección IP privada, interna, o al endpoint de metadata de la nube (<code>169.254.169.254</code>, usado por AWS/GCP/Azure para exponer credenciales de la máquina), la petición se bloquea. Esto se puede desactivar con <em>Permitir redes privadas/internas</em> — <strong>solo hazlo si hay una necesidad de negocio real</strong> (ej. integración con un sistema interno del cliente vía VPN).</p>
 
-    <h3>Protección 3 — Los errores de la API destino no rompen nada</h3>
-    <p>Un 404 o 500 de la API externa se devuelve como parte de la respuesta normal (no como una falla del conector), para que el agente pueda decidir cómo manejarlo — igual que lo haría un desarrollador leyendo el código de estado HTTP.</p>
+    <h3 data-i18n="seguridad_h3_proteccion3">Protección 3 — Los errores de la API destino no rompen nada</h3>
+    <p data-i18n="seguridad_p_proteccion3">Un 404 o 500 de la API externa se devuelve como parte de la respuesta normal (no como una falla del conector), para que el agente pueda decidir cómo manejarlo — igual que lo haría un desarrollador leyendo el código de estado HTTP.</p>
   </section>
 
   <!-- ============ 3. PRERREQUISITOS ============ -->
   <section>
-    <h2 id="prerrequisitos">3. Prerrequisitos</h2>
+    <h2 id="prerrequisitos" data-i18n="prerrequisitos_h2">3. Prerrequisitos</h2>
 
     <ul>
-      <li>La <strong>URL base</strong> exacta de la API destino (ej. <code>https://api.miempresa.com</code>).</li>
-      <li>Las <strong>credenciales</strong> que esa API requiera (usuario/contraseña, un token Bearer, o una API key), según lo que su documentación indique.</li>
-      <li>Saber si esa API necesita algún <strong>header especial</strong> siempre presente (ej. <code>X-Tenant-Id</code>), para ponerlo en "Headers por defecto".</li>
+      <li data-i18n="prerrequisitos_li1">La <strong>URL base</strong> exacta de la API destino (ej. <code>https://api.miempresa.com</code>).</li>
+      <li data-i18n="prerrequisitos_li2">Las <strong>credenciales</strong> que esa API requiera (usuario/contraseña, un token Bearer, o una API key), según lo que su documentación indique.</li>
+      <li data-i18n="prerrequisitos_li3">Saber si esa API necesita algún <strong>header especial</strong> siempre presente (ej. <code>X-Tenant-Id</code>), para ponerlo en "Headers por defecto".</li>
     </ul>
   </section>
 
   <!-- ============ 4. CONFIGURACIÓN EN EL FABRICANTE (GENÉRICO) ============ -->
   <section>
-    <h2 id="configuracion-fabricante">4. Cómo obtener las credenciales del sistema destino</h2>
+    <h2 id="configuracion-fabricante" data-i18n="configuracion_fabricante_h2">4. Cómo obtener las credenciales del sistema destino</h2>
 
-    <p>Como este conector se conecta a <strong>cualquier</strong> API que configures, no hay una consola de fabricante fija que documentar aquí — el proceso varía según el sistema. Pasos generales que aplican casi siempre:</p>
+    <p data-i18n="configuracion_fabricante_intro">Como este conector se conecta a <strong>cualquier</strong> API que configures, no hay una consola de fabricante fija que documentar aquí — el proceso varía según el sistema. Pasos generales que aplican casi siempre:</p>
     <ol class="ruvic-steps">
-      <li><strong>Identifica el panel de administración/desarrollador</strong> del sistema destino (suele estar en "Settings", "Developer", "API", o "Integrations").</li>
-      <li><strong>Genera una credencial dedicada</strong> para esta integración — no reutilices una contraseña personal. Según el sistema, será un usuario y contraseña, un token, o una API key.</li>
-      <li><strong>Anota la URL base de su API</strong> (a veces distinta de la URL de la app web, ej. <code>api.sistema.com</code> en vez de <code>app.sistema.com</code>).</li>
-      <li><strong>Revisa si exige headers adicionales</strong> (ej. un identificador de cuenta/tenant) que debas poner en "Headers por defecto".</li>
-      <li><strong>Guarda la credencial de forma segura</strong> — la vas a pegar en el formulario de Ruvic en la sección 5.</li>
+      <li data-i18n="configuracion_fabricante_paso1"><strong>Identifica el panel de administración/desarrollador</strong> del sistema destino (suele estar en "Settings", "Developer", "API", o "Integrations").</li>
+      <li data-i18n="configuracion_fabricante_paso2"><strong>Genera una credencial dedicada</strong> para esta integración — no reutilices una contraseña personal. Según el sistema, será un usuario y contraseña, un token, o una API key.</li>
+      <li data-i18n="configuracion_fabricante_paso3"><strong>Anota la URL base de su API</strong> (a veces distinta de la URL de la app web, ej. <code>api.sistema.com</code> en vez de <code>app.sistema.com</code>).</li>
+      <li data-i18n="configuracion_fabricante_paso4"><strong>Revisa si exige headers adicionales</strong> (ej. un identificador de cuenta/tenant) que debas poner en "Headers por defecto".</li>
+      <li data-i18n="configuracion_fabricante_paso5"><strong>Guarda la credencial de forma segura</strong> — la vas a pegar en el formulario de Ruvic en la sección 5.</li>
     </ol>
-    <p>Si integras un sistema específico frecuentemente, considera pedir que se construya un conector dedicado en vez de usar este genérico — tendrá una guía paso a paso real de ese fabricante.</p>
+    <p data-i18n="configuracion_fabricante_cierre">Si integras un sistema específico frecuentemente, considera pedir que se construya un conector dedicado en vez de usar este genérico — tendrá una guía paso a paso real de ese fabricante.</p>
   </section>
 
   <!-- ============ 5. PERMISOS REQUERIDOS ============ -->
   <section>
-    <h2 id="permisos">5. Permisos requeridos</h2>
+    <h2 id="permisos" data-i18n="permisos_h2">5. Permisos requeridos</h2>
 
-    <p>Como este conector no tiene un catálogo de permisos propio (los permisos reales los define el sistema destino), sigue el <strong>principio de mínimo privilegio</strong> al generar la credencial:</p>
+    <p data-i18n="permisos_intro">Como este conector no tiene un catálogo de permisos propio (los permisos reales los define el sistema destino), sigue el <strong>principio de mínimo privilegio</strong> al generar la credencial:</p>
     <ul>
-      <li>Si el sistema permite crear usuarios/tokens con <strong>alcance limitado</strong> (ej. "solo lectura", "solo estos endpoints"), úsalo en vez de un acceso administrativo completo.</li>
-      <li>Otorga solo los permisos que las operaciones que vas a usar realmente necesitan — si el agente solo va a leer datos (<code>get</code>), no le des una credencial con permisos de escritura.</li>
-      <li>Si vas a habilitar <code>delete()</code>, confirma que entiendes exactamente qué puede borrar esa credencial en el sistema destino.</li>
+      <li data-i18n="permisos_li1">Si el sistema permite crear usuarios/tokens con <strong>alcance limitado</strong> (ej. "solo lectura", "solo estos endpoints"), úsalo en vez de un acceso administrativo completo.</li>
+      <li data-i18n="permisos_li2">Otorga solo los permisos que las operaciones que vas a usar realmente necesitan — si el agente solo va a leer datos (<code>get</code>), no le des una credencial con permisos de escritura.</li>
+      <li data-i18n="permisos_li3">Si vas a habilitar <code>delete()</code>, confirma que entiendes exactamente qué puede borrar esa credencial en el sistema destino.</li>
     </ul>
   </section>
 
   <!-- ============ 6. CONFIGURACIÓN EN RUVIC ============ -->
   <section>
-    <h2 id="configuracion-ruvic">6. Configuración en Ruvic</h2>
+    <h2 id="configuracion-ruvic" data-i18n="configuracion_ruvic_h2">6. Configuración en Ruvic</h2>
 
-    <p>Entra a <strong>Settings → Conectores</strong>, busca la tarjeta <strong>HTTP Genérico</strong> y pulsa <strong>Configurar</strong>. Primero elige el <strong>modo de autenticación</strong> según lo que la API destino requiera:</p>
+    <p data-i18n="configuracion_ruvic_intro">Entra a <strong>Settings → Conectores</strong>, busca la tarjeta <strong>HTTP Genérico</strong> y pulsa <strong>Configurar</strong>. Primero elige el <strong>modo de autenticación</strong> según lo que la API destino requiera:</p>
 
     <table>
       <thead>
         <tr>
-          <th>Modo</th>
-          <th>Cuándo usarlo</th>
+          <th data-i18n="configuracion_ruvic_tabla_th1">Modo</th>
+          <th data-i18n="configuracion_ruvic_tabla_th2">Cuándo usarlo</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Sin autenticación</td><td>APIs públicas sin login (ej. servicios de datos abiertos)</td></tr>
-        <tr><td>Basic Auth</td><td>La API pide usuario y contraseña en cada petición</td></tr>
-        <tr><td>Bearer Token</td><td>La API usa un token fijo tipo <code>Authorization: Bearer xxx</code></td></tr>
-        <tr><td>API Key</td><td>La API pide una llave en un header o parámetro específico (ej. <code>X-API-Key</code>)</td></tr>
-        <tr><td>OAuth2 Client Credentials</td><td>La API usa el flujo OAuth2 máquina-a-máquina (te da un token_url, client_id y client_secret)</td></tr>
+        <tr><td data-i18n="configuracion_ruvic_tabla_fila1_col1">Sin autenticación</td><td data-i18n="configuracion_ruvic_tabla_fila1_col2">APIs públicas sin login (ej. servicios de datos abiertos)</td></tr>
+        <tr><td data-i18n="configuracion_ruvic_tabla_fila2_col1">Basic Auth</td><td data-i18n="configuracion_ruvic_tabla_fila2_col2">La API pide usuario y contraseña en cada petición</td></tr>
+        <tr><td data-i18n="configuracion_ruvic_tabla_fila3_col1">Bearer Token</td><td data-i18n="configuracion_ruvic_tabla_fila3_col2">La API usa un token fijo tipo <code>Authorization: Bearer xxx</code></td></tr>
+        <tr><td data-i18n="configuracion_ruvic_tabla_fila4_col1">API Key</td><td data-i18n="configuracion_ruvic_tabla_fila4_col2">La API pide una llave en un header o parámetro específico (ej. <code>X-API-Key</code>)</td></tr>
+        <tr><td data-i18n="configuracion_ruvic_tabla_fila5_col1">OAuth2 Client Credentials</td><td data-i18n="configuracion_ruvic_tabla_fila5_col2">La API usa el flujo OAuth2 máquina-a-máquina (te da un token_url, client_id y client_secret)</td></tr>
       </tbody>
     </table>
 
-    <p>Completa la <strong>URL base</strong> y las credenciales correspondientes. Los campos avanzados (headers por defecto, dominios adicionales, redes privadas) déjalos vacíos/por defecto salvo que sepas que los necesitas.</p>
+    <p data-i18n="configuracion_ruvic_campos_texto">Completa la <strong>URL base</strong> y las credenciales correspondientes. Los campos avanzados (headers por defecto, dominios adicionales, redes privadas) déjalos vacíos/por defecto salvo que sepas que los necesitas.</p>
 
-    <p>Guarda y pulsa <span class="ruvic-button">Probar conexión</span>.</p>
+    <p data-i18n="configuracion_ruvic_guardar_parrafo">Guarda y pulsa <span class="ruvic-button">Probar conexión</span>.</p>
   </section>
 
   <!-- ============ 7. VERIFICACIÓN ============ -->
   <section>
-    <h2 id="verificacion">7. Verificación</h2>
+    <h2 id="verificacion" data-i18n="verificacion_h2">7. Verificación</h2>
 
     <ol class="ruvic-steps">
       <li>
-        <strong>Test de conexión exitoso.</strong>
-        <p>El botón <em>Probar conexión</em> debe responder: <em>"Conexión exitosa a [tu URL] (auth_mode=...)"</em>. Nota: incluso si la API responde con un error HTTP, la conexión cuenta como exitosa — solo confirma que el host es alcanzable.</p>
+        <strong data-i18n="verificacion_paso1_titulo">Test de conexión exitoso.</strong>
+        <p data-i18n="verificacion_paso1_texto">El botón <em>Probar conexión</em> debe responder: <em>"Conexión exitosa a [tu URL] (auth_mode=...)"</em>. Nota: incluso si la API responde con un error HTTP, la conexión cuenta como exitosa — solo confirma que el host es alcanzable.</p>
       </li>
       <li>
-        <strong>Prueba mínima con el agente.</strong>
-        <p>Pide algo de solo lectura primero, por ejemplo:</p>
-        <blockquote><em>"Haz una consulta GET a /algún-endpoint de esa API y muéstrame la respuesta."</em></blockquote>
+        <strong data-i18n="verificacion_paso2_titulo">Prueba mínima con el agente.</strong>
+        <p data-i18n="verificacion_paso2_texto">Pide algo de solo lectura primero, por ejemplo:</p>
+        <blockquote><em data-i18n="verificacion_paso2_ejemplo">"Haz una consulta GET a /algún-endpoint de esa API y muéstrame la respuesta."</em></blockquote>
       </li>
     </ol>
   </section>
 
   <!-- ============ 8. SOLUCIÓN DE PROBLEMAS ============ -->
   <section>
-    <h2 id="solucion-problemas">8. Solución de problemas</h2>
+    <h2 id="solucion-problemas" data-i18n="solucion_problemas_h2">8. Solución de problemas</h2>
 
     <table>
       <thead>
         <tr>
-          <th>Mensaje / síntoma</th>
-          <th>Causa probable y solución</th>
+          <th data-i18n="solucion_problemas_tabla_th1">Mensaje / síntoma</th>
+          <th data-i18n="solucion_problemas_tabla_th2">Causa probable y solución</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>"Destino no permitido..."</td>
-          <td>El agente intentó llamar a un dominio distinto al configurado. Si es legítimo, agrégalo a "Dominios adicionales permitidos"; si no, es la protección funcionando correctamente.</td>
+          <td data-i18n="solucion_problemas_fila1_col1">"Destino no permitido..."</td>
+          <td data-i18n="solucion_problemas_fila1_col2">El agente intentó llamar a un dominio distinto al configurado. Si es legítimo, agrégalo a "Dominios adicionales permitidos"; si no, es la protección funcionando correctamente.</td>
         </tr>
         <tr>
-          <td>"Destino bloqueado por seguridad... dirección privada/interna"</td>
-          <td>El host configurado resuelve a una IP privada. Si es un uso interno intencional, activa "Permitir redes privadas/internas"; si no lo esperabas, revisa la URL base configurada.</td>
+          <td data-i18n="solucion_problemas_fila2_col1">"Destino bloqueado por seguridad... dirección privada/interna"</td>
+          <td data-i18n="solucion_problemas_fila2_col2">El host configurado resuelve a una IP privada. Si es un uso interno intencional, activa "Permitir redes privadas/internas"; si no lo esperabas, revisa la URL base configurada.</td>
         </tr>
         <tr>
-          <td>"No se pudo conectar..." (timeout/red)</td>
-          <td>Verifica que la URL base sea correcta y que el servicio destino esté disponible; puede requerir estar en una red/VPN específica.</td>
+          <td data-i18n="solucion_problemas_fila3_col1">"No se pudo conectar..." (timeout/red)</td>
+          <td data-i18n="solucion_problemas_fila3_col2">Verifica que la URL base sea correcta y que el servicio destino esté disponible; puede requerir estar en una red/VPN específica.</td>
         </tr>
         <tr>
-          <td>La API responde 401/403 dentro de un resultado "exitoso"</td>
-          <td>Esto es normal: el conector se conectó bien, pero las credenciales configuradas no son válidas para esa API. Revisa usuario/contraseña, token, o API key según el modo de autenticación elegido.</td>
+          <td data-i18n="solucion_problemas_fila4_col1">La API responde 401/403 dentro de un resultado "exitoso"</td>
+          <td data-i18n="solucion_problemas_fila4_col2">Esto es normal: el conector se conectó bien, pero las credenciales configuradas no son válidas para esa API. Revisa usuario/contraseña, token, o API key según el modo de autenticación elegido.</td>
         </tr>
       </tbody>
     </table>
@@ -206,20 +206,20 @@
 
   <!-- ============ 9. FAQ ============ -->
   <section>
-    <h2 id="faq-seguridad">9. Preguntas frecuentes</h2>
+    <h2 id="faq-seguridad" data-i18n="faq_seguridad_h2">9. Preguntas frecuentes</h2>
 
-    <h3>¿Puedo usar el mismo conector para varias APIs distintas?</h3>
-    <p>No directamente — cada configuración de este conector está atada a una URL base. Si necesitas integrarte con varias APIs distintas, configura una instancia separada del conector por cada una.</p>
+    <h3 data-i18n="faq_seguridad_p1_titulo">¿Puedo usar el mismo conector para varias APIs distintas?</h3>
+    <p data-i18n="faq_seguridad_p1_texto">No directamente — cada configuración de este conector está atada a una URL base. Si necesitas integrarte con varias APIs distintas, configura una instancia separada del conector por cada una.</p>
 
-    <h3>¿Por qué un 404 de la API no aparece como error en Ruvic?</h3>
-    <p>Porque muchas veces un 404 es una respuesta válida y esperada (ej. "este usuario no existe"), no una falla técnica. El agente recibe el código de estado y decide cómo interpretarlo, igual que lo haría un programa normal.</p>
+    <h3 data-i18n="faq_seguridad_p2_titulo">¿Por qué un 404 de la API no aparece como error en Ruvic?</h3>
+    <p data-i18n="faq_seguridad_p2_texto">Porque muchas veces un 404 es una respuesta válida y esperada (ej. "este usuario no existe"), no una falla técnica. El agente recibe el código de estado y decide cómo interpretarlo, igual que lo haría un programa normal.</p>
 
-    <h3>¿Dónde quedan guardadas las credenciales?</h3>
-    <p>Como secreto en el almacén de credenciales de la plataforma. La interfaz nunca vuelve a mostrarlas.</p>
+    <h3 data-i18n="faq_seguridad_p3_titulo">¿Dónde quedan guardadas las credenciales?</h3>
+    <p data-i18n="faq_seguridad_p3_texto">Como secreto en el almacén de credenciales de la plataforma. La interfaz nunca vuelve a mostrarlas.</p>
 
     <div class="callout callout-warning">
-      <span class="callout-title">Buenas prácticas</span>
-      Usa siempre las credenciales de mínimo privilegio que la API destino permita; no actives "Permitir redes privadas/internas" sin una razón concreta; y si el agente va a poder usar <code>delete()</code>, dale instrucciones explícitas de siempre confirmar antes de eliminar algo.
+      <span class="callout-title" data-i18n="faq_seguridad_callout_titulo">Buenas prácticas</span>
+      <span data-i18n="faq_seguridad_callout_texto">Usa siempre las credenciales de mínimo privilegio que la API destino permita; no actives "Permitir redes privadas/internas" sin una razón concreta; y si el agente va a poder usar <code>delete()</code>, dale instrucciones explícitas de siempre confirmar antes de eliminar algo.</span>
     </div>
   </section>
 
@@ -229,6 +229,206 @@
   <div class="tagline">Opera, factura, escala — aunque tu equipo no esté</div>
   <div>Ruvic Engine · @ruvic_ai</div>
 </footer>
+
+<script>
+  window.I18N = window.I18N || {};
+  window.I18N['http_generic'] = {
+    es: {
+      "header_h1": "Conector HTTP Genérico — Guía de configuración",
+      "header_subtitulo": "Conecta cualquier API REST que no tenga un conector dedicado en Ruvic — con autenticación configurable y protección contra uso indebido hacia redes internas.",
+      "header_badge_nombre": "HTTP Genérico",
+      "header_badge_categoria": "Utilitarios",
+      "header_badge_version": "v1.0.0",
+      "toc_titulo": "Contenido",
+      "toc_item_que_es": "¿Qué es y para qué sirve?",
+      "toc_item_seguridad": "Cómo funciona la seguridad (léelo primero)",
+      "toc_item_prerrequisitos": "Prerrequisitos",
+      "toc_item_configuracion_fabricante": "Cómo obtener las credenciales del sistema destino",
+      "toc_item_permisos": "Permisos requeridos",
+      "toc_item_configuracion_ruvic": "Configuración en Ruvic",
+      "toc_item_verificacion": "Verificación",
+      "toc_item_solucion_problemas": "Solución de problemas",
+      "toc_item_faq_seguridad": "Preguntas frecuentes",
+      "que_es_h2": "1. ¿Qué es y para qué sirve?",
+      "que_es_p1": "Los demás conectores de Ruvic (Salesforce, HubSpot, GitHub...) están hechos a la medida de un proveedor específico. Este conector es distinto: es una herramienta <strong>genérica</strong> para conectarse a <strong>cualquier API REST</strong> que el cliente use y que todavía no tenga un conector dedicado.",
+      "que_es_p2": "Cada vez que se configura, queda atado a <strong>una sola API destino</strong> (definida por su URL base) — no es un conector que pueda llamar a cualquier URL que se le ocurra al agente en el momento.",
+      "que_es_p3": "Operaciones soportadas:",
+      "que_es_tabla_th1": "Operación",
+      "que_es_tabla_th2": "Qué hace",
+      "que_es_tabla_fila1_col2": "Consultar datos",
+      "que_es_tabla_fila2_col2": "Crear datos",
+      "que_es_tabla_fila3_col2": "Actualizar/reemplazar datos",
+      "que_es_tabla_fila4_col2": "Eliminar datos ⚠️",
+      "que_es_tabla_fila5_col2": "Verbo arbitrario (ej. PATCH)",
+      "que_es_callout_titulo": "Este conector SÍ elimina datos",
+      "que_es_callout_texto": "A diferencia de los demás conectores de Ruvic, este <strong>sí ejecuta operaciones DELETE reales</strong> si la API destino lo soporta. No hay una capa de bloqueo — la responsabilidad de usarlo con cuidado recae en quien lo configure y en cómo se instruya al agente.",
+      "seguridad_h2": "2. Cómo funciona la seguridad (léelo primero)",
+      "seguridad_p1": "Porque este conector puede apuntar a cualquier API que un admin configure, trae protecciones activas contra un riesgo específico llamado <strong>SSRF</strong> (Server-Side Request Forgery): que, por error de configuración o por manipulación del agente, el conector termine llamando a direcciones internas de la infraestructura de Ruvic en vez de a la API externa que se pretendía.",
+      "seguridad_h3_proteccion1": "Protección 1 — Atado a un solo dominio",
+      "seguridad_p_proteccion1": "El conector solo puede llamar al dominio configurado en <em>URL base</em>, más los que se agreguen explícitamente en <em>Dominios adicionales permitidos</em>. Si el agente intenta construir una URL hacia otro dominio, la petición se rechaza automáticamente.",
+      "seguridad_h3_proteccion2": "Protección 2 — Bloqueo de redes privadas",
+      "seguridad_p_proteccion2": "Por defecto, si el dominio configurado resuelve a una dirección IP privada, interna, o al endpoint de metadata de la nube (<code>169.254.169.254</code>, usado por AWS/GCP/Azure para exponer credenciales de la máquina), la petición se bloquea. Esto se puede desactivar con <em>Permitir redes privadas/internas</em> — <strong>solo hazlo si hay una necesidad de negocio real</strong> (ej. integración con un sistema interno del cliente vía VPN).",
+      "seguridad_h3_proteccion3": "Protección 3 — Los errores de la API destino no rompen nada",
+      "seguridad_p_proteccion3": "Un 404 o 500 de la API externa se devuelve como parte de la respuesta normal (no como una falla del conector), para que el agente pueda decidir cómo manejarlo — igual que lo haría un desarrollador leyendo el código de estado HTTP.",
+      "prerrequisitos_h2": "3. Prerrequisitos",
+      "prerrequisitos_li1": "La <strong>URL base</strong> exacta de la API destino (ej. <code>https://api.miempresa.com</code>).",
+      "prerrequisitos_li2": "Las <strong>credenciales</strong> que esa API requiera (usuario/contraseña, un token Bearer, o una API key), según lo que su documentación indique.",
+      "prerrequisitos_li3": "Saber si esa API necesita algún <strong>header especial</strong> siempre presente (ej. <code>X-Tenant-Id</code>), para ponerlo en \"Headers por defecto\".",
+      "configuracion_fabricante_h2": "4. Cómo obtener las credenciales del sistema destino",
+      "configuracion_fabricante_intro": "Como este conector se conecta a <strong>cualquier</strong> API que configures, no hay una consola de fabricante fija que documentar aquí — el proceso varía según el sistema. Pasos generales que aplican casi siempre:",
+      "configuracion_fabricante_paso1": "<strong>Identifica el panel de administración/desarrollador</strong> del sistema destino (suele estar en \"Settings\", \"Developer\", \"API\", o \"Integrations\").",
+      "configuracion_fabricante_paso2": "<strong>Genera una credencial dedicada</strong> para esta integración — no reutilices una contraseña personal. Según el sistema, será un usuario y contraseña, un token, o una API key.",
+      "configuracion_fabricante_paso3": "<strong>Anota la URL base de su API</strong> (a veces distinta de la URL de la app web, ej. <code>api.sistema.com</code> en vez de <code>app.sistema.com</code>).",
+      "configuracion_fabricante_paso4": "<strong>Revisa si exige headers adicionales</strong> (ej. un identificador de cuenta/tenant) que debas poner en \"Headers por defecto\".",
+      "configuracion_fabricante_paso5": "<strong>Guarda la credencial de forma segura</strong> — la vas a pegar en el formulario de Ruvic en la sección 5.",
+      "configuracion_fabricante_cierre": "Si integras un sistema específico frecuentemente, considera pedir que se construya un conector dedicado en vez de usar este genérico — tendrá una guía paso a paso real de ese fabricante.",
+      "permisos_h2": "5. Permisos requeridos",
+      "permisos_intro": "Como este conector no tiene un catálogo de permisos propio (los permisos reales los define el sistema destino), sigue el <strong>principio de mínimo privilegio</strong> al generar la credencial:",
+      "permisos_li1": "Si el sistema permite crear usuarios/tokens con <strong>alcance limitado</strong> (ej. \"solo lectura\", \"solo estos endpoints\"), úsalo en vez de un acceso administrativo completo.",
+      "permisos_li2": "Otorga solo los permisos que las operaciones que vas a usar realmente necesitan — si el agente solo va a leer datos (<code>get</code>), no le des una credencial con permisos de escritura.",
+      "permisos_li3": "Si vas a habilitar <code>delete()</code>, confirma que entiendes exactamente qué puede borrar esa credencial en el sistema destino.",
+      "configuracion_ruvic_h2": "6. Configuración en Ruvic",
+      "configuracion_ruvic_intro": "Entra a <strong>Settings → Conectores</strong>, busca la tarjeta <strong>HTTP Genérico</strong> y pulsa <strong>Configurar</strong>. Primero elige el <strong>modo de autenticación</strong> según lo que la API destino requiera:",
+      "configuracion_ruvic_tabla_th1": "Modo",
+      "configuracion_ruvic_tabla_th2": "Cuándo usarlo",
+      "configuracion_ruvic_tabla_fila1_col1": "Sin autenticación",
+      "configuracion_ruvic_tabla_fila1_col2": "APIs públicas sin login (ej. servicios de datos abiertos)",
+      "configuracion_ruvic_tabla_fila2_col1": "Basic Auth",
+      "configuracion_ruvic_tabla_fila2_col2": "La API pide usuario y contraseña en cada petición",
+      "configuracion_ruvic_tabla_fila3_col1": "Bearer Token",
+      "configuracion_ruvic_tabla_fila3_col2": "La API usa un token fijo tipo <code>Authorization: Bearer xxx</code>",
+      "configuracion_ruvic_tabla_fila4_col1": "API Key",
+      "configuracion_ruvic_tabla_fila4_col2": "La API pide una llave en un header o parámetro específico (ej. <code>X-API-Key</code>)",
+      "configuracion_ruvic_tabla_fila5_col1": "OAuth2 Client Credentials",
+      "configuracion_ruvic_tabla_fila5_col2": "La API usa el flujo OAuth2 máquina-a-máquina (te da un token_url, client_id y client_secret)",
+      "configuracion_ruvic_campos_texto": "Completa la <strong>URL base</strong> y las credenciales correspondientes. Los campos avanzados (headers por defecto, dominios adicionales, redes privadas) déjalos vacíos/por defecto salvo que sepas que los necesitas.",
+      "configuracion_ruvic_guardar_parrafo": "Guarda y pulsa <span class=\"ruvic-button\">Probar conexión</span>.",
+      "verificacion_h2": "7. Verificación",
+      "verificacion_paso1_titulo": "Test de conexión exitoso.",
+      "verificacion_paso1_texto": "El botón <em>Probar conexión</em> debe responder: <em>\"Conexión exitosa a [tu URL] (auth_mode=...)\"</em>. Nota: incluso si la API responde con un error HTTP, la conexión cuenta como exitosa — solo confirma que el host es alcanzable.",
+      "verificacion_paso2_titulo": "Prueba mínima con el agente.",
+      "verificacion_paso2_texto": "Pide algo de solo lectura primero, por ejemplo:",
+      "verificacion_paso2_ejemplo": "\"Haz una consulta GET a /algún-endpoint de esa API y muéstrame la respuesta.\"",
+      "solucion_problemas_h2": "8. Solución de problemas",
+      "solucion_problemas_tabla_th1": "Mensaje / síntoma",
+      "solucion_problemas_tabla_th2": "Causa probable y solución",
+      "solucion_problemas_fila1_col1": "\"Destino no permitido...\"",
+      "solucion_problemas_fila1_col2": "El agente intentó llamar a un dominio distinto al configurado. Si es legítimo, agrégalo a \"Dominios adicionales permitidos\"; si no, es la protección funcionando correctamente.",
+      "solucion_problemas_fila2_col1": "\"Destino bloqueado por seguridad... dirección privada/interna\"",
+      "solucion_problemas_fila2_col2": "El host configurado resuelve a una IP privada. Si es un uso interno intencional, activa \"Permitir redes privadas/internas\"; si no lo esperabas, revisa la URL base configurada.",
+      "solucion_problemas_fila3_col1": "\"No se pudo conectar...\" (timeout/red)",
+      "solucion_problemas_fila3_col2": "Verifica que la URL base sea correcta y que el servicio destino esté disponible; puede requerir estar en una red/VPN específica.",
+      "solucion_problemas_fila4_col1": "La API responde 401/403 dentro de un resultado \"exitoso\"",
+      "solucion_problemas_fila4_col2": "Esto es normal: el conector se conectó bien, pero las credenciales configuradas no son válidas para esa API. Revisa usuario/contraseña, token, o API key según el modo de autenticación elegido.",
+      "faq_seguridad_h2": "9. Preguntas frecuentes",
+      "faq_seguridad_p1_titulo": "¿Puedo usar el mismo conector para varias APIs distintas?",
+      "faq_seguridad_p1_texto": "No directamente — cada configuración de este conector está atada a una URL base. Si necesitas integrarte con varias APIs distintas, configura una instancia separada del conector por cada una.",
+      "faq_seguridad_p2_titulo": "¿Por qué un 404 de la API no aparece como error en Ruvic?",
+      "faq_seguridad_p2_texto": "Porque muchas veces un 404 es una respuesta válida y esperada (ej. \"este usuario no existe\"), no una falla técnica. El agente recibe el código de estado y decide cómo interpretarlo, igual que lo haría un programa normal.",
+      "faq_seguridad_p3_titulo": "¿Dónde quedan guardadas las credenciales?",
+      "faq_seguridad_p3_texto": "Como secreto en el almacén de credenciales de la plataforma. La interfaz nunca vuelve a mostrarlas.",
+      "faq_seguridad_callout_titulo": "Buenas prácticas",
+      "faq_seguridad_callout_texto": "Usa siempre las credenciales de mínimo privilegio que la API destino permita; no actives \"Permitir redes privadas/internas\" sin una razón concreta; y si el agente va a poder usar <code>delete()</code>, dale instrucciones explícitas de siempre confirmar antes de eliminar algo."
+    },
+    en: {
+      "header_h1": "Generic HTTP Connector — Setup Guide",
+      "header_subtitulo": "Connect any REST API that doesn't have a dedicated Ruvic connector — with configurable authentication and protection against misuse toward internal networks.",
+      "header_badge_nombre": "Generic HTTP",
+      "header_badge_categoria": "Utilities",
+      "header_badge_version": "v1.0.0",
+      "toc_titulo": "Contents",
+      "toc_item_que_es": "What is it and what is it for?",
+      "toc_item_seguridad": "How security works (read this first)",
+      "toc_item_prerrequisitos": "Prerequisites",
+      "toc_item_configuracion_fabricante": "How to get credentials from the destination system",
+      "toc_item_permisos": "Required permissions",
+      "toc_item_configuracion_ruvic": "Setup in Ruvic",
+      "toc_item_verificacion": "Verification",
+      "toc_item_solucion_problemas": "Troubleshooting",
+      "toc_item_faq_seguridad": "FAQ",
+      "que_es_h2": "1. What is it and what is it for?",
+      "que_es_p1": "Ruvic's other connectors (Salesforce, HubSpot, GitHub...) are purpose-built for a specific vendor. This connector is different: it's a <strong>generic</strong> tool to connect to <strong>any REST API</strong> the client uses that doesn't yet have a dedicated connector.",
+      "que_es_p2": "Each time it's configured, it's tied to <strong>a single destination API</strong> (defined by its base URL) — it's not a connector that can call whatever URL the agent comes up with on the spot.",
+      "que_es_p3": "Supported operations:",
+      "que_es_tabla_th1": "Operation",
+      "que_es_tabla_th2": "What it does",
+      "que_es_tabla_fila1_col2": "Read data",
+      "que_es_tabla_fila2_col2": "Create data",
+      "que_es_tabla_fila3_col2": "Update/replace data",
+      "que_es_tabla_fila4_col2": "Delete data ⚠️",
+      "que_es_tabla_fila5_col2": "Arbitrary verb (e.g. PATCH)",
+      "que_es_callout_titulo": "This connector CAN delete data",
+      "que_es_callout_texto": "Unlike Ruvic's other connectors, this one <strong>does execute real DELETE operations</strong> if the destination API supports it. There's no blocking layer — using it carefully is the responsibility of whoever configures it and how the agent is instructed.",
+      "seguridad_h2": "2. How security works (read this first)",
+      "seguridad_p1": "Because this connector can point to any API an admin configures, it includes active protections against a specific risk called <strong>SSRF</strong> (Server-Side Request Forgery): that, due to misconfiguration or agent manipulation, the connector ends up calling internal addresses of Ruvic's infrastructure instead of the intended external API.",
+      "seguridad_h3_proteccion1": "Protection 1 — Tied to a single domain",
+      "seguridad_p_proteccion1": "The connector can only call the domain configured in <em>Base URL</em>, plus any explicitly added in <em>Additional allowed domains</em>. If the agent tries to build a URL toward another domain, the request is automatically rejected.",
+      "seguridad_h3_proteccion2": "Protection 2 — Private network blocking",
+      "seguridad_p_proteccion2": "By default, if the configured domain resolves to a private, internal, or cloud metadata endpoint address (<code>169.254.169.254</code>, used by AWS/GCP/Azure to expose machine credentials), the request is blocked. This can be disabled with <em>Allow private/internal networks</em> — <strong>only do this if there's a real business need</strong> (e.g. integrating with a client's internal system via VPN).",
+      "seguridad_h3_proteccion3": "Protection 3 — Destination API errors don't break anything",
+      "seguridad_p_proteccion3": "A 404 or 500 from the external API is returned as part of the normal response (not as a connector failure), so the agent can decide how to handle it — the same way a developer would by reading the HTTP status code.",
+      "prerrequisitos_h2": "3. Prerequisites",
+      "prerrequisitos_li1": "The exact <strong>base URL</strong> of the destination API (e.g. <code>https://api.mycompany.com</code>).",
+      "prerrequisitos_li2": "The <strong>credentials</strong> that API requires (username/password, a Bearer token, or an API key), per its documentation.",
+      "prerrequisitos_li3": "Whether that API needs any <strong>special header</strong> always present (e.g. <code>X-Tenant-Id</code>), to put it in \"Default headers\".",
+      "configuracion_fabricante_h2": "4. How to get credentials from the destination system",
+      "configuracion_fabricante_intro": "Since this connector connects to <strong>any</strong> API you configure, there's no fixed vendor console to document here — the process varies by system. General steps that apply almost always:",
+      "configuracion_fabricante_paso1": "<strong>Find the admin/developer panel</strong> of the destination system (usually under \"Settings\", \"Developer\", \"API\", or \"Integrations\").",
+      "configuracion_fabricante_paso2": "<strong>Generate a dedicated credential</strong> for this integration — don't reuse a personal password. Depending on the system, it'll be a username/password, a token, or an API key.",
+      "configuracion_fabricante_paso3": "<strong>Note its API base URL</strong> (sometimes different from the web app URL, e.g. <code>api.system.com</code> instead of <code>app.system.com</code>).",
+      "configuracion_fabricante_paso4": "<strong>Check if it requires extra headers</strong> (e.g. an account/tenant identifier) to put in \"Default headers\".",
+      "configuracion_fabricante_paso5": "<strong>Store the credential securely</strong> — you'll paste it into the Ruvic form in section 5.",
+      "configuracion_fabricante_cierre": "If you integrate a specific system frequently, consider requesting a dedicated connector instead of using this generic one — it will have a real step-by-step guide for that vendor.",
+      "permisos_h2": "5. Required permissions",
+      "permisos_intro": "Since this connector has no permission catalog of its own (real permissions are defined by the destination system), follow the <strong>least-privilege principle</strong> when generating the credential:",
+      "permisos_li1": "If the system allows creating users/tokens with <strong>limited scope</strong> (e.g. \"read-only\", \"these endpoints only\"), use that instead of full admin access.",
+      "permisos_li2": "Only grant the permissions the operations you'll actually use require — if the agent will only read data (<code>get</code>), don't give it a credential with write permissions.",
+      "permisos_li3": "If you'll enable <code>delete()</code>, confirm you understand exactly what that credential can delete in the destination system.",
+      "configuracion_ruvic_h2": "6. Setup in Ruvic",
+      "configuracion_ruvic_intro": "Go to <strong>Settings → Connectors</strong>, find the <strong>Generic HTTP</strong> card and click <strong>Configure</strong>. First choose the <strong>authentication mode</strong> based on what the destination API requires:",
+      "configuracion_ruvic_tabla_th1": "Mode",
+      "configuracion_ruvic_tabla_th2": "When to use it",
+      "configuracion_ruvic_tabla_fila1_col1": "No authentication",
+      "configuracion_ruvic_tabla_fila1_col2": "Public APIs without login (e.g. open data services)",
+      "configuracion_ruvic_tabla_fila2_col1": "Basic Auth",
+      "configuracion_ruvic_tabla_fila2_col2": "The API asks for username and password on every request",
+      "configuracion_ruvic_tabla_fila3_col1": "Bearer Token",
+      "configuracion_ruvic_tabla_fila3_col2": "The API uses a fixed token like <code>Authorization: Bearer xxx</code>",
+      "configuracion_ruvic_tabla_fila4_col1": "API Key",
+      "configuracion_ruvic_tabla_fila4_col2": "The API asks for a key in a specific header or parameter (e.g. <code>X-API-Key</code>)",
+      "configuracion_ruvic_tabla_fila5_col1": "OAuth2 Client Credentials",
+      "configuracion_ruvic_tabla_fila5_col2": "The API uses machine-to-machine OAuth2 (it gives you a token_url, client_id, and client_secret)",
+      "configuracion_ruvic_campos_texto": "Fill in the <strong>base URL</strong> and the corresponding credentials. Leave the advanced fields (default headers, additional domains, private networks) empty/default unless you know you need them.",
+      "configuracion_ruvic_guardar_parrafo": "Save and click <span class=\"ruvic-button\">Test connection</span>.",
+      "verificacion_h2": "7. Verification",
+      "verificacion_paso1_titulo": "Successful connection test.",
+      "verificacion_paso1_texto": "The <em>Test connection</em> button should return: <em>\"Successful connection to [your URL] (auth_mode=...)\"</em>. Note: even if the API responds with an HTTP error, the connection still counts as successful — it only confirms the host is reachable.",
+      "verificacion_paso2_titulo": "Minimal test with the agent.",
+      "verificacion_paso2_texto": "Ask something read-only first, for example:",
+      "verificacion_paso2_ejemplo": "\"Make a GET request to /some-endpoint of that API and show me the response.\"",
+      "solucion_problemas_h2": "8. Troubleshooting",
+      "solucion_problemas_tabla_th1": "Message / symptom",
+      "solucion_problemas_tabla_th2": "Likely cause and fix",
+      "solucion_problemas_fila1_col1": "\"Destination not allowed...\"",
+      "solucion_problemas_fila1_col2": "The agent tried to call a domain different from the configured one. If legitimate, add it to \"Additional allowed domains\"; if not, the protection is working as intended.",
+      "solucion_problemas_fila2_col1": "\"Destination blocked for security... private/internal address\"",
+      "solucion_problemas_fila2_col2": "The configured host resolves to a private IP. If this is intentional internal use, enable \"Allow private/internal networks\"; if unexpected, check the configured base URL.",
+      "solucion_problemas_fila3_col1": "\"Could not connect...\" (timeout/network)",
+      "solucion_problemas_fila3_col2": "Verify the base URL is correct and the destination service is available; it may require being on a specific network/VPN.",
+      "solucion_problemas_fila4_col1": "The API responds 401/403 inside a \"successful\" result",
+      "solucion_problemas_fila4_col2": "This is expected: the connector connected fine, but the configured credentials aren't valid for that API. Check username/password, token, or API key based on the chosen auth mode.",
+      "faq_seguridad_h2": "9. FAQ",
+      "faq_seguridad_p1_titulo": "Can I use the same connector for multiple different APIs?",
+      "faq_seguridad_p1_texto": "Not directly — each configuration of this connector is tied to one base URL. If you need to integrate with several different APIs, configure a separate instance of the connector for each.",
+      "faq_seguridad_p2_titulo": "Why doesn't a 404 from the API show up as an error in Ruvic?",
+      "faq_seguridad_p2_texto": "Because a 404 is often a valid, expected response (e.g. \"this user doesn't exist\"), not a technical failure. The agent receives the status code and decides how to interpret it, the same way a normal program would.",
+      "faq_seguridad_p3_titulo": "Where are credentials stored?",
+      "faq_seguridad_p3_texto": "As a secret in the platform's credential store. The UI never displays them again.",
+      "faq_seguridad_callout_titulo": "Best practices",
+      "faq_seguridad_callout_texto": "Always use the least-privilege credentials the destination API allows; don't enable \"Allow private/internal networks\" without a concrete reason; and if the agent will be able to use <code>delete()</code>, give it explicit instructions to always confirm before deleting anything."
+    }
+  };
+</script>
 
 </body>
 </html>
